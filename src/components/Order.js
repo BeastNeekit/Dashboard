@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../css/Order.css';
 const Order = ({ order }) => {
     const orders = [
         {
@@ -23,7 +23,7 @@ const Order = ({ order }) => {
     ];
     return (
         <div className="recent-orders">
-            <h2>Recent Orders</h2>
+            <h1>Recent Orders</h1>
             <table>
                 <thead>
                 <tr>

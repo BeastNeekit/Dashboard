@@ -1,16 +1,21 @@
 
 import React from 'react';
 import Order from "../components/Order";
-import Users from "../components/Users";
+import UserStatus from "../components/UserStatus";
 import Analytics from "../components/Analytics";
+import Users from "../components/Users";
+import Inbox from "../components/Inbox";
 
 const MainContent = () => {
 
   return (
       <>
          <Analytics />
-          <Users />
+          <UserStatus />
           <Order />
+          <Users />
+          <Inbox />
+
       </>
   );
 };

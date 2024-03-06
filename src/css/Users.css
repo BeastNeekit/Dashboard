@@ -1,0 +1,47 @@
+/* Add this to your existing style.css or create a new CSS file */
+
+.users-section {
+    background-color: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 1.3rem;
+    box-shadow: var(--box-shadow);
+}
+
+.users-section h2 {
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.user-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.user img {
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 0.4rem;
+    border-radius: 50%;
+}
+
+.user h3 {
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.user p {
+    font-size: 0.87rem;
+    color: var(--color-dark-variant);
+}

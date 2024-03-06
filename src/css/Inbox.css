@@ -1,0 +1,61 @@
+/* Inbox.css */
+
+/* Add your styles for the Inbox component */
+h1 {
+    margin-bottom: 0.8rem;
+}
+
+.inbox-container {
+    margin-top: 1.3rem;
+}
+
+.message-list {
+    list-style: none;
+    padding: 0;
+}
+
+.message-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--color-white);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--card-border-radius);
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.message-item:hover {
+    box-shadow: none;
+}
+
+.message-info {
+    flex-grow: 1;
+}
+
+.sender {
+    font-weight: 600;
+}
+
+.subject {
+    color: var(--color-dark-variant);
+}
+
+.date {
+    font-size: 0.8rem;
+    color: var(--color-dark-variant);
+}
+
+.view-all-link {
+    display: block;
+    text-align: center;
+    margin: 1rem auto;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.view-all-link:hover {
+    color: var(--color-dark);
+}

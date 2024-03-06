@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import '../style.css';
+import '../css/style.css';
 import RightSection from './RightSection';
 import MainContent from './MainContent';
 import Users from '../components/Users';
 import Order from "../components/Order";
 import Analytics from "../components/Analytics";
+import Inbox from "../components/Inbox";
+import UserStatus from "../components/UserStatus";
 
 const Dashboard = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -19,11 +21,20 @@ const Dashboard = () => {
             case 'new-login':
                 setContentSection(<Users />);
                 break;
-            case 'sale-list':
-                setContentSection(<Order />);
+            case 'user-list':
+                setContentSection(<UserStatus />);
+                break;
+            case 'history':
+                setContentSection(<UserStatus /> );
                 break;
             case 'analytics':
                 setContentSection(<Analytics />);
+                break;
+            case 'message':
+                setContentSection(<Inbox />);
+                break;
+            case 'users':
+                setContentSection(<Users /> );
                 break;
             default:
                 setContentSection(null);
@@ -36,8 +47,8 @@ const Dashboard = () => {
         { id: 'users', icon: 'person_outline', text: 'Users' },
         { id: 'history', icon: 'receipt_long', text: 'History' },
         { id: 'analytics', icon: 'insights', text: 'Analytics' },
-        { id: 'tickets', icon: 'mail_outline', text: 'Tickets' },
-        { id: 'sale-list', icon: 'inventory', text: 'Sale List' },
+        { id: 'message', icon: 'mail_outline', text: 'Inbox' },
+        { id: 'user-list', icon: 'inventory', text: 'User Status' },
         { id: 'reports', icon: 'report_gmailerrorred', text: 'Reports' },
         { id: 'settings', icon: 'settings', text: 'Settings' },
         { id: 'new-login', icon: 'add', text: 'New Login' },
@@ -69,7 +80,11 @@ const Dashboard = () => {
                             onClick={() => toggleSidebar(item.id)}
                         >
                             <span className="material-icons-sharp">{item.icon}</span>
-                            <h3>{item.text}</h3>
+                            <h3>{item.text}
+                            {item.id === 'message' && (
+                                <span className="message-count">9</span>
+                            )}
+                        </h3>
                         </a>
                     ))}
                 </div>

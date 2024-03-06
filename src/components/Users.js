@@ -1,31 +1,31 @@
-import React from "react";
+import React from 'react';
+import '../css/Users.css';
 const Users = () => {
+    // Your user data or logic can be added here
+
+    const users = [
+        { id: 1, name: 'John Doe', email: 'john@example.com' },
+        { id: 2, name: 'Jane Doe', email: 'jane@example.com' },
+        { id: 3, name: 'Bob Smith', email: 'bob@example.com' },
+        // Add more users as needed
+    ];
+
     return (
-        <div className="new-users">
-            <h2>New Users</h2>
+        <>
+        <h1>Users</h1>
+    <div className="users-section">
             <div className="user-list">
-                <div className="user">
-                    <img src="images/profile-2.jpg"/>
-                    <h2>Jack</h2>
-                    <p>54 Min Ago</p>
-                </div>
-                <div className="user">
-                    <img src="images/profile-3.jpg"/>
-                    <h2>Amir</h2>
-                    <p>3 Hours Ago</p>
-                </div>
-                <div className="user">
-                    <img src="images/profile-4.jpg"/>
-                    <h2>Ember</h2>
-                    <p>6 Hours Ago</p>
-                </div>
-                <div className="user">
-                    <img src="images/plus.png"/>
-                    <h2>More</h2>
-                    <p>New User</p>
-                </div>
+                {users.map((user) => (
+                    <div className="user" key={user.id}>
+                        <img src={`/path-to-user-images/${user.id}.jpg`} alt={user.name} />
+                        <h3>{user.name}</h3>
+                        <p>{user.email}</p>
+                    </div>
+                ))}
             </div>
         </div>
+            </>
     );
 };
+
 export default Users;

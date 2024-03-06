@@ -1,8 +1,5 @@
 import React, {useEffect, useRef} from 'react';
-import '../style.css';
-import Users from "../components/Users";
-import Order from "../components/Order";
-import Analytics from "../components/Analytics";
+import '../css/style.css';
 
 const RightSection = () => {
     const darkModeRef = useRef(null);
