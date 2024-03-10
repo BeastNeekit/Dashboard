@@ -1,5 +1,5 @@
 # SAMPLE PROJECT
-# LIGHT_VIEW
+# -LIGHT_VIEW
 ![Screenshot 2024-03-10 172926](https://github.com/BeastNeekit/Dashboard/assets/99237918/875303a9-4fb2-4f67-bec1-c3d122efe041)
 
 # NIGHT_VIEW 
