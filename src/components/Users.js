@@ -1,30 +1,45 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import '../css/Users.css';
-const Users = () => {
-    // Your user data or logic can be added here
+import axios from 'axios';
 
-    const users = [
-        { id: 1, name: 'John Doe', email: 'john@example.com' },
-        { id: 2, name: 'Jane Doe', email: 'jane@example.com' },
-        { id: 3, name: 'Bob Smith', email: 'bob@example.com' },
-        // Add more users as needed
-    ];
+const Users = () => {
+    const [users, setUsers] = useState([]);
+
+
+
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/getImage')
+            .then((res) => {
+                setUsers(res.data);
+            })
+            .catch((err) => {
+                console.log('Error fetching users:', err);
+            });
+    }, []);
+
+
 
     return (
         <>
-        <h1>Users</h1>
-    <div className="users-section">
-            <div className="user-list">
-                {users.map((user) => (
-                    <div className="user" key={user.id}>
-                        <img src={`/path-to-user-images/${user.id}.jpg`} alt={user.name} />
-                        <h3>{user.name}</h3>
-                        <p>{user.email}</p>
-                    </div>
-                ))}
+            <h1>Users</h1>
+            <div className="users-section">
+                <div className="user-list">
+                    {users && users.length > 0 ? (
+                        users.map((user) => (
+                            <div className="user" key={user._id}>
+                                <img src={user.imageUrl} alt={user.name} />
+                                <h3>{user.name}</h3>
+                                <p>{user.email}</p>
+                            </div>
+                        ))
+                    ) : (
+                        <p>No users found.</p>
+                    )}
+                </div>
             </div>
-        </div>
-            </>
+
+        </>
     );
 };
 

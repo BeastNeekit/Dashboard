@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './css/form.css'; // Import your custom CSS file
+import './css/form.css';
 
 const LoginForm = () => {
     const [formData, setFormData] = useState({
@@ -44,7 +44,7 @@ const LoginForm = () => {
                     Password:
                     <input type="password" name="password" value={formData.password} onChange={handleChange} />
                 </label>
-                <button type="submit">Login</button>
+                <button className="submit" type="submit">Login</button>
 
                 {error && <p className="error-message">{error}</p>}
 

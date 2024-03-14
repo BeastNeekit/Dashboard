@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './css/form.css'; // Import your custom CSS file
+import './css/form.css';
 
 const RegisterForm = () => {
     const [formData, setFormData] = useState({
@@ -38,7 +38,7 @@ const RegisterForm = () => {
             <form className="register-form" onSubmit={handleSubmit}>
                 <h2>Register</h2>
                 <label>
-                    Name:
+                    Username:
                     <input type="text" name="name" value={formData.name} required onChange={handleChange} />
                 </label>
                 <label>

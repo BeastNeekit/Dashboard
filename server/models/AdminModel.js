@@ -8,6 +8,7 @@ const adminSchema = new mongoose.Schema({
         type: Date,
         default: null,
     },
+    profilePictures: String,
 });
 
 const AdminModel = mongoose.model('Admin', adminSchema);

@@ -104,6 +104,7 @@ b{
     color: var(--color-danger);
 }
 
+
 .success{
     color: var(--color-success);
 }
@@ -137,8 +138,8 @@ aside .toggle .logo{
 }
 
 aside .toggle .logo img{
-    width: 2rem;
-    height: 2rem;
+    width: 12rem;
+    height: 4rem;
 }
 
 aside .toggle .close{
@@ -275,19 +276,19 @@ main .analyse svg circle{
 
 main .analyse .sales svg circle{
     stroke: var(--color-success);
-    stroke-dashoffset: -30;
+    stroke-dashoffset: 0;
     stroke-dasharray: 200;
 }
 
 main .analyse .visits svg circle{
     stroke: var(--color-danger);
-    stroke-dashoffset: -30;
+    stroke-dashoffset: 0;
     stroke-dasharray: 200;
 }
 
 main .analyse .searches svg circle{
     stroke: var(--color-primary);
-    stroke-dashoffset: -30;
+    stroke-dashoffset: 0;
     stroke-dasharray: 200;
 }
 
@@ -659,3 +660,25 @@ main table tbody tr:last-child td{
     }
 
 }
+
+
+main svg circle {
+    stroke: var(--color-success);
+    stroke-dashoffset: 0;
+    stroke-dasharray: 200;
+    transform-origin: center;
+    animation: progressAnimation 4s ease-in-out running;
+}
+
+@keyframes progressAnimation {
+    0% {
+        stroke-dashoffset: 200;
+    }
+    50%{
+        stroke-dashoffset: 100;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
